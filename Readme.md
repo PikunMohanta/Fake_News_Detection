@@ -42,7 +42,7 @@ Remember, in the fight against fake news, every one of us has a role to play. St
 
 ## How to run locally 🛠️
 - 1. Prerequisites: Ensure that [git](https://git-scm.com/download), [Anaconda](https://www.anaconda.com/) are installed on your system.
-- 2. Project Acquisition: Use the command git clone https://github.com/Gladiator07/Harvestify.git to clone the entire project. Alternatively, you can download the code and extract it.
+- 2. Project Acquisition: Use the command git clone https://github.com/PikunMohanta/Fake_News_Detection.git to clone the entire project. Alternatively, you can download the code and extract it.
 - 3. Environment Setup: After cloning the project, open the Anaconda prompt in the project directory and execute the following commands:
     ```
     conda create -n fakenews python=3.11.7
