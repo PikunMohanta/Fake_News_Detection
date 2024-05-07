@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+   <title>News Detection</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='new.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="icon" href="{{url_for('static', filename='./img/icon.png')}}" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header>
+      <div class="logo">News Authenticator</div>
+      <input type="checkbox" id="click">
+      <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </label>
+
+      <nav>
+        <a href="https://rapidapi.com/fangyiyu/api/fake-news-detection1" style="--i:0;">API</a>
+        <a href="https://github.com/PikunMohanta/Fake-News-Detection" style="--i:1;">Github</a>
+      </nav>
+    </header>
+
+    <div class="main-content">
+      <div class="searchBox">
+        <form action="{{ url_for('predict') }}" method="post">
+          <textarea id="searchInput" class="searchInput" type="text "name="news" placeholder="Enter the URL or text" required="required"></textarea>
+          <button id="myInput" type="submit" class="searchButton">
+            <img class="searchIcon" src="{{url_for('static', filename='icons.png')}}" alt="Search Icon">
+          </button>
+        </form>
+      </div>
+      <div class="terminal-loader">
+        <div class="terminal-header">
+          <div class="terminal-title">Result</div>
+        </div>
+        <div class="text" style="font-size: large">{{ prediction_text }}</div>
+      </div>
+    </div>
+
+    <script>
+      const textarea = document.querySelector('.searchInput');
+      textarea.addEventListener('input', function() {
+          this.style.height = 'auto';
+          this.style.height = (this.scrollHeight) + 'px';
+      });
+      document.getElementById("searchInput").addEventListener("keyup", function(event) {
+       if (event.keyCode === 13) { // 13 is the keycode for Enter key
+        event.preventDefault();
+      document.getElementById("myInput").click();
+      }
+      });
+
+      document.getElementById("myInput").addEventListener("click", function() {
+        
+      });
+  </script>
+    <script>
+      const data = JSON.stringify({
+        key1: 'value',
+        key2: 'value'
+      });
+  
+      const xhr = new XMLHttpRequest();
+      xhr.withCredentials = true;
+  
+      xhr.addEventListener('readystatechange', function () {
+      if (this.readyState === this.DONE) {
+        console.log(this.responseText);
+        }
+      });
+  
+    xhr.open('POST', 'https://Fake_News.rapidapi.com/?text=%3CREQUIRED%3E');
+    xhr.setRequestHeader('content-type', 'application/json');
+    xhr.setRequestHeader('X-RapidAPI-Key', 'aa5b8e0717msh709286db4d76b36p1c9dbdjsn8c055816f5d1');
+    xhr.setRequestHeader('X-RapidAPI-Host', 'Fake_News.rapidapi.com');
+  
+    xhr.send(data);
+   </script>
+
+  </body>
+</html>
