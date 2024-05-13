@@ -74,7 +74,7 @@ nltk==3.8.1
 notebook==7.0.8
 notebook_shim==0.2.3
 numexpr==2.8.7
-numpy==1.23.5
+numpy==1.26.4
 oauthlib==3.2.2
 opt-einsum==3.3.0
 overrides==7.4.0
